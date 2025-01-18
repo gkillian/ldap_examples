@@ -1,3 +1,10 @@
+
+CC=gcc
+RM=rm -fv
+RMDIR=rm -rfv
+
+LDAP_URI= ldap://ldap.forumsys.com 
+LDAP_BASE = dc=example,dc=com
 LDAP_INCDIR= /opt/local/include       
 LDAP_LIBDIR= /opt/local/lib
 
@@ -8,9 +15,14 @@ CFLAGS = -Wall -pedantic -std=c99 -g
 LDFLAGS = $(LDAP_LIBPATH)
 LIBS = -lldap -llber
 
+all : clean init run
 
 init : init.c
 	$(CC) $(CFLAGS) $(LDAP_INCPATH) $< -o $@ $(LIBS)
+
+.PHONY : run
+run: init
+	./init  $(LDAP_URI) $(LDAP_BASE)
 
 clean : lean
 	-@$(RM) init
@@ -18,5 +30,5 @@ clean : lean
 lean :
 	-@$(RM) *~
 	-@$(RM) ?
-	-@$(RM) *.o
-
+	-@$(RM) init.o
+	-@$(RMDIR) init.dSYM
