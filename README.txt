@@ -10,3 +10,6 @@ sudo apt install ldap-utils
 https://learn.microsoft.com/en-us/previous-versions/windows/desktop/ldap/example-code-for-establishing-a-session-over-ssl?redirectedfrom=MSDN
 
 https://learn.microsoft.com/en-us/previous-versions/windows/desktop/ldap/example-code-for-establishing-a-session-without-encryption
+
+===== redhat ===========================
+https://docs.redhat.com/en/documentation/red_hat_directory_server/12/html/searching_entries_and_tuning_searches/ref_ldap-search-examples_searching-entries-and-tuning-searches#ref_ldap-search-examples_searching-entries-and-tuning-searches
